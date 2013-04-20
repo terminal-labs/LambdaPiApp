@@ -11,6 +11,7 @@ textarea:focus, input:focus{
     width: 640px;
     height: 960px;
     background: url('../img/background.jpg');
+    zoom: 50%
 }
 .iphone_4s_device {
     position: absolute;
