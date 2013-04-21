@@ -40,7 +40,7 @@
                 <div class='white_box_gray_border_right_edge'></div>
                 <div class='white_box_gray_border_bottom_edge'></div>
                 <div class='white_box_gray_border_left_edge'></div>
-                <input type="text" class="text_field" name="lastname">
+                <input type="text" id="input_number" class="text_field">
                 <div id="search" class="search_botton"></div>
             </div>
 
@@ -174,7 +174,8 @@ function show_spinner()
 {
     $('#veil').show();
     spinner.spin(target);
-    var veil_timer = setTimeout(stop_spinner,1000);
+    call_cloud();
+    //var veil_timer = setTimeout(stop_spinner,1000);
 }
 function stop_spinner()
 {
@@ -234,9 +235,10 @@ $("#more_data").click(function() {
     show_large_table();
 });
  
-$(function () {
-	
-    var dic = {"data point #1":1.23456789};
+function call_cloud()
+{
+    var number_from_text_input = $('#input_number').val();
+    var dic = {"substring": number_from_text_input};
     var encoded_data = base64.b64encode(json.dumps(dic));
     var url = "http://" + server_address + "/search?substring=" + encoded_data;
     $.ajax({
@@ -250,10 +252,10 @@ $(function () {
             
             $("#data_cell_1").html(data_dict["total_time"]);
             $("#data_cell_2").html(data_dict["data_processed"]);
-            
+            stop_spinner();
         }
     );
-});
+}
 
 </script>
 </html>
