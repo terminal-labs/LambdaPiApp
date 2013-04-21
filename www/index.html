@@ -55,7 +55,7 @@
                         <div class="accordion_row_right_edge_top"></div>
                         <div class="white_bg_top"></div>
                         <div class="accordion_row_text_box">Total Computation Time</div>
-                         <div class="right_side_text">1234</div>
+                        <div class="right_side_text">1234</div>
                     </div>
                     
                     <div id="insert_rows">
@@ -118,7 +118,7 @@
                         <div class="accordion_row_right_edge_top"></div>
                         <div class="white_bg_top"></div>
                         <div class="accordion_row_text_box">Total Computation Time</div>
-                        <div class="right_side_text">4567484</div>
+                        <div id="data_cell_1" class="right_side_text">4567484</div>
                     </div>
                     
                     <div id="insert_rows">
@@ -127,7 +127,7 @@
                             <div class="accordion_row_left_edge row_border"></div>
                             <div class="accordion_row_right_edge row_border"></div> 
                             <div class="accordion_row_text_box">Amount of Data Processed</div>
-                            <div class="right_side_text">987654321</div>
+                            <div id="data_cell_2" class="right_side_text">987654321</div>
                         </div>
 
                     <!-- /insert_rows -->
@@ -245,8 +245,12 @@ $(function () {
         }).done(function(b64_data) {
             
             var json_string = base64.b64decode(b64_data);
-            var ghraph_data_obj = json.loads(json_string);
-            $.plot($("#placeholder"), [ ghraph_data_obj, ]);
+            var data_dict = json.loads(json_string);
+            $.plot($("#placeholder"), [data_dict["graph_data"], ]);
+            
+            $("#data_cell_1").html(data_dict["total_time"]);
+            $("#data_cell_2").html(data_dict["data_processed"]);
+            
         }
     );
 });
