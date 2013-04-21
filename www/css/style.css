@@ -4,6 +4,7 @@ body {
 textarea:focus, input:focus{
     outline: none;
 }
+a:link { -webkit-tap-highlight-color: rgba(0,0,0,0); }
 .cordova_content_iphone_4a {
     position: absolute;
     top: 0px;
