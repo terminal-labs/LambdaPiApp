@@ -132,7 +132,7 @@
                         <div class="accordion_row row_border white_bg">
                             <div class="accordion_row_left_edge row_border"></div>
                             <div class="accordion_row_right_edge row_border"></div> 
-                            <div class="accordion_row_text_box">charicters_processed</div>
+                            <div class="accordion_row_text_box">characters_processed</div>
                             <div id="data_cell_2" class="right_side_text"></div>
                         </div>
 
@@ -257,7 +257,7 @@ function call_cloud()
             $.plot($("#placeholder"), [data_dict["graph_data"], ]);
             
             $("#data_cell_1").html(data_dict["total_computation_time"]);
-            $("#data_cell_2").html(data_dict["charicters_processed"]);
+            $("#data_cell_2").html(data_dict["characters_processed"]);
             $("#data_cell_3").html(data_dict["first_occurance"]);
             $("#data_cell_4").html(data_dict["average_node_time"]);
             $("#data_cell_5").html(data_dict["total_instances"]);
